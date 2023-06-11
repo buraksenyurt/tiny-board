@@ -13,7 +13,7 @@ sudo docker run -p 5434:5432 --name tinyboard -e POSTGRES_PASSWORD=tiger -d post
 Buna göre uygulamanın veritabanı bağlantısını da tutan .env dosyasında aşağıdaki tanımı kullanmamız yeterli olacak.
 
 ```.env
-DATABASE_URL=postgres://postgres:tiger@localhost:5434/postgres
+DATABASE_URL=postgres://localhost:5434/tiny-board?user=postgres&password=tiger
 ```
 
 ## Rust Projesinin Oluşturulması
