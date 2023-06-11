@@ -18,7 +18,10 @@ features = [
   # View the list of supported features at https://www.sea-ql.org/SeaORM/docs/install-and-config/database-and-async-runtime.
   # e.g.
 
-    # Bu kısımlar yorum satırı idi açıldı.
-   "runtime-tokio-rustls",  # `ASYNC_RUNTIME` feature
-   "sqlx-postgres",         # `DATABASE_DRIVER` feature
+#    Bu kısımlar yorum satırı idi. Migration çalıştırmak için açıldı.
+#    Ancak bu kısımlar açıkken ana projeyi build etmek istediğimizde
+#    aşağıdaki feature'ların zaten kullanımda olduğu ifade ediliyor.
+#    Bu nedenle tekrar kapattım.
+#   "runtime-tokio-rustls",  # `ASYNC_RUNTIME` feature
+#   "sqlx-postgres",         # `DATABASE_DRIVER` feature
 ]
