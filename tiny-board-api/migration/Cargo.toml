@@ -22,6 +22,6 @@ features = [
 #    Ancak bu kısımlar açıkken ana projeyi build etmek istediğimizde
 #    aşağıdaki feature'ların zaten kullanımda olduğu ifade ediliyor.
 #    Bu nedenle tekrar kapattım.
-#   "runtime-tokio-rustls",  # `ASYNC_RUNTIME` feature
+#   "runtime-actix-native-tls",  # `ASYNC_RUNTIME` feature
 #   "sqlx-postgres",         # `DATABASE_DRIVER` feature
 ]

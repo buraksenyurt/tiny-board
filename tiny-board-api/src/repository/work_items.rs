@@ -1,8 +1,8 @@
 use crate::entity::{prelude::*, work_item};
 use actix_web::web::Json;
 use log::debug;
-use sea_orm::{entity::*, query::*, DeleteResult, DeriveEntityModel};
-use sea_orm::{ActiveValue::NotSet, DatabaseConnection, EntityTrait, Set};
+use sea_orm::{entity::*, DeleteResult};
+use sea_orm::{ActiveValue::NotSet, DatabaseConnection, EntityTrait};
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
