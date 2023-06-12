@@ -98,3 +98,66 @@ sea-orm-cli generate entity -o src/entity
 ```
 
 Bu komut src/entity klasörü içerisinde work_item isimli veri yapısının oluşturulmasını sağlayacaktır. Elebette birden fazla tablo olması halinde her biri için birer entity modeli üretilir.
+
+## Servis Tarafı için Testler
+
+Web API tarafı tamamlandıktan sonra CRUD operasyonlarını test edebiliriz. Bunun için Postman veya curl gibi araçlar kullanılabilir. Tabii işlemlere başlamadan önce docker container olarak kullandığımız postgresql örneğinin çalıştığından emin olmalıyız.
+
+**Yeni bir WorkItem eklemek için**
+
+```text
+Adres : 127.0.0.1:7000/workitems
+Metot : HTTP Post
+Örnek İçerik : 
+{
+    "title": "Hafta sonu 10 Km koşu",
+    "summary": "Berlin maratonu öncesi hazırlıklar kapsamında yapılması planlanan koşudur.",
+    "business_value": 100,
+    "completed": false
+}
+```
+
+![assets/api_request_01.png](assets/api_request_01.png)
+
+**Tüm WorkItem'ları listelemek için**
+
+```text
+Adres : 127.0.0.1:7000/workitems
+Metot : HTTP Get
+```
+
+![assets/api_request_02.png](assets/api_request_02.png)
+
+**Belli bir ID bilgisine sahip WorkItem'ı getirmek için**
+
+```text
+Adres : 127.0.0.1:7000/workitems/4
+Metot : HTTP Get
+```
+
+![assets/api_request_03.png](assets/api_request_03.png)
+
+**Bir ID bilgisine sahip WorkItem'ı güncellemek için**
+
+```text
+Adres : 127.0.0.1:7000/workitems/4
+Metot : HTTP Put
+Örnek İçerik : 
+{
+    "title": "Rust X 5",
+    "summary": "5 Pomodore'luk Rust çalışması",
+    "business_value": 250,
+    "completed": true
+}
+```
+
+![assets/api_request_04.png](assets/api_request_04.png)
+
+**Bir WorktItem'ı silmek için**
+
+```text
+Adres : 127.0.0.1:7000/workitems/3
+Metot : HTTP Delete
+```
+
+![assets/api_request_05.png](assets/api_request_05.png)
