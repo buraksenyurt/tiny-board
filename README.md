@@ -165,3 +165,29 @@ Metot : HTTP Delete
 Bu arada tüm bu işlemler sırasında debug moda ait tüm logları da terminal penceresinden görebiliriz.
 
 ![assets/api_request_runtime.png](assets/api_request_runtime.png)
+
+## Electron Projesinin Oluşturulması
+
+Önyüz uygulamamız Vue tabanlı bir Electron projesi. Eğer sistemde npm yüklü ise projenin kendisini scaffold şablonunu kullanarak kolayca oluşturabiliriz.
+
+```bash
+npm create @quick-start/electron
+```
+
+CLI tarafında sorulan soruları aşağıdaki gibi cevaplandırarak ilerleyebiliriz.
+
+![assets/electron_setup.png](assets/electron_setup.png)
+
+Önyüz uygulamasının ihtiyaç duyacağı npm paketlerini de yüklemek gerekiyor. Bunun için proje klasöründe aşağıdaki komutu vermek yeterli olacaktır.
+
+```bash
+cd tiny-board-app
+npm i
+```
+
+Eğitimde [element-plus](https://element-plus.org/en-US/guide/installation.html) isimli bir bileşen seti kullanılmakta. Ayrıca rust ile yazılmış servis ile ilişim için axios paketi kullanılmakta. Bu paketleri yüklemek için aşağıdaki komutlarla ilerlenebilir.
+
+```bash
+npm install element-plus --save
+npm install axios vue-axios --save
+```
