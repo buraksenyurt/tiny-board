@@ -19,7 +19,7 @@ pub struct AppState {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    env::set_var("RUST_LOG", "debub");
+    env::set_var("RUST_LOG", "debug");
     dotenv::dotenv().ok();
     env_logger::init();
     let conn = env::var("DATABASE_URL").expect("DATABASE_URL belirtilmeli");

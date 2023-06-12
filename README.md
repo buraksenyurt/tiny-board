@@ -161,3 +161,7 @@ Metot : HTTP Delete
 ```
 
 ![assets/api_request_05.png](assets/api_request_05.png)
+
+Bu arada tüm bu işlemler sırasında debug moda ait tüm logları da terminal penceresinden görebiliriz.
+
+![assets/api_request_runtime.png](assets/api_request_runtime.png)
