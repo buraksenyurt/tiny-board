@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import WorkItemList from './components/WorkItemList.vue'
 </script>
 
 <template>
-  <h1>My Tiny Work Item Board</h1>
-  <el-button type="primary">Ekle</el-button>
+ <WorkItemList/>  
 </template>
 
 <style>
