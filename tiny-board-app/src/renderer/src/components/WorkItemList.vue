@@ -1,28 +1,34 @@
 <template>
-    <el-row>
-        <el-col :span="18" :offset="0" style="width:100%">
-            <h1>Görevler</h1>
-            <el-table :data="workItems">
-                <el-table-column prop="title" label="Title" width="150"/>
-                <el-table-column prop="summary" label="Summary" width="200"/>
-                <el-table-column prop="business_value" label="Value" width="200">
-                    <template #default="scope">
-                        <el-space wrap>
-                            <el-input-number min="0" max="13" step="1" v-model="scope.row.business_value" @click="updateItem(scope.row)"/>
-                        </el-space>
-                    </template>
-                </el-table-column>
-                <el-table-column fixed="right" label="Operations" width="100">
-                    <template #default="scope">
-                        <el-space wrap>
-                            <el-switch v-model="scope.row.completed" @click="updateItem(scope.row)" />
-                        </el-space>
-                    </template>
-                </el-table-column>
-            </el-table>
-        </el-col>
-    </el-row>
-
+  <el-row>
+    <el-col :span="18" :offset="0" style="width:100%">
+      <h1>Görevler</h1>
+      <el-table :data="workItems">
+        <el-table-column prop="title" label="Title" width="150" />
+        <el-table-column prop="summary" label="Summary" width="200" />
+        <el-table-column prop="business_value" label="Value" width="200">
+          <template #default="scope">
+            <el-space wrap>
+              <el-input-number min="0" max="13" step="1" v-model="scope.row.business_value"
+                @click="updateItem(scope.row)" />
+            </el-space>
+          </template>
+        </el-table-column>
+        <el-table-column fixed="right" label="Operations" width="100">
+          <template #default="scope">
+            <el-space wrap>
+              <el-switch v-model="scope.row.completed" @click="updateItem(scope.row)" />
+              <el-popconfirm confirm-button-text="Eminim" cancel-button-text="Vezgeçtim" icon="el-icon-info"
+                title="Görevi silmek istediğin emin misin?" @confirm="deleteItem(scope.row)" @cancel="cancelDelete">
+                <template #reference>
+                  <el-button size="default" type="danger">Görevi Sil</el-button>
+                </template>
+              </el-popconfirm>
+            </el-space>
+          </template>
+        </el-table-column>
+      </el-table>
+    </el-col>
+  </el-row>
 </template>
 
 <script lang="ts">
