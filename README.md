@@ -191,3 +191,25 @@ Eğitimde [element-plus](https://element-plus.org/en-US/guide/installation.html)
 npm install element-plus --save
 npm install axios vue-axios --save
 ```
+
+## Çalışma Zamanı
+
+Örnek uygulama Postgresql veritabanını kullanmakta ve o da docker container olarak servis edilmekte. Dolayısıyla sistemde ilgili container'ın çalışır olduğundan emin olmak lazım. Bunun haricinde backend taraf servisinin de çalışır olması gerekiyor. Sonrasında eğer geliştirme modunda ilerleyeceksek **npm run dev** komutunu kullanabiliriz. Bu komut ile Electron uygulaması çalıştırılacaktır. Ayrıca localhost:5137 adresinden bu electron uygulamasının tarayıcıda çalışan versiyonuna da geçiş yapabiliriz. Bu özellikle uygulama ile servis tarafı arasındaki haberleşmeleri monitör etmek için idealdir. Çalıştığım örnekte CORS ihlallerine takıldığımdan rust uygulamasında buna yönelik bir değişiklik yapmak durumunda kaldım. İşte çalışma zamanına ait birkaç ekran görüntüsü.
+
+Uygulama ilk açıldığında;
+
+![assets/runtime_01.png](assets/runtime_01.png)
+
+Örnek bir değişiklik yapıldıktan sonra;
+
+![assets/runtime_02.png](assets/runtime_02.png)
+
+Yeni bir Work Item eklendiğinde;
+
+![assets/runtime_03.png](assets/runtime_03.png)
+
+Bir Work Item silindiğinde;
+
+![assets/runtime_04.png](assets/runtime_04.png)
+
+![assets/runtime_05.png](assets/runtime_05.png)
