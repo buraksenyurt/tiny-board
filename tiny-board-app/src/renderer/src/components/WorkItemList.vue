@@ -2,6 +2,9 @@
   <el-row>
     <el-col :span="18" :offset="0" style="width:100%">
       <h1>Görevler</h1>
+      <WorkItemForm :submitItem="createItem">
+        
+      </WorkItemForm>
       <el-table :data="workItems">
         <el-table-column prop="title" label="Title" width="150" />
         <el-table-column prop="summary" label="Summary" width="200" />
@@ -42,6 +45,7 @@ export default {
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
+import WorkItemForm from './WorkItemForm.vue'
 import axios from 'axios'
 
 interface WorkItem {
